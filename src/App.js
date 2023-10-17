@@ -14,14 +14,14 @@ export default props => {
                 <Stack.Screen name="ListarAmigos" component={ListarAmigos}
                     options={() => {
                         return {
-                            title: "Meus Amigos"
+                            title: "Vitinho Arenas"
                         }
                     }}
                 />
                 <Stack.Screen name="DetalharAmigo" component={DetalharAmigo}
                     options={() => {
                         return {
-                            title: "Perfil do Amigo"
+                            title: "Perfil do Amigo Quadras"
                         }
                     }}
                 />
@@ -32,7 +32,7 @@ export default props => {
 
 const screenOptions = {
     headerStyle: {
-        backgroundColor: '#0dcaf0'
+        backgroundColor: 'green'
     },
     headerTintColor: 'white',
     headerTintStyle: {

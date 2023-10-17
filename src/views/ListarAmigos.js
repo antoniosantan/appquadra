@@ -7,7 +7,7 @@ export default props => {
 
     fetch('https://vitorsantana.pythonanywhere.com/api/amigos/')
         .then(data => data.json())
-        .then(json => setAmigos(json.results))
+        .then(json => setAmigos(json))
         .catch(error => console.warn(error))
 
     const ProductCard = ({ item }) => {
@@ -18,8 +18,6 @@ export default props => {
                     <View style={styles.productInfo}>
                         <Text style={styles.productName}>{item.nome}</Text>
                         <Text style={styles.productDescription}>{item.info}</Text>
-                        <Text style={styles.productDescription}>{item.whatsapp}</Text>
-                        <Text style={styles.productDescription}>{item.email}</Text>
                     </View>
                 </View >
             </TouchableOpacity>
