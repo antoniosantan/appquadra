@@ -12,54 +12,53 @@ export default props => {
         .then(json => setAmigo(json))
         .catch(error => console.warn(error))
 
-
-    return (
-        <View style={styles.container}>
-            <View style={styles.avatarContainer}>
-                <Image
-                    style={styles.avatar}
-                    source={{ uri: amigo.avatar }}
-                />
+        return (
+            <View style={styles.container}>
+                <View style={styles.avatarContainer}>
+                    <Image
+                        style={styles.avatar}
+                        source={{ uri: amigo.avatar }}
+                    />
+                </View>
+                <View style={styles.form}>
+                    <Text style={styles.label}>Name</Text>
+                    <TextInput
+                        
+                        placeholder="Nome"
+                        value={amigo.nome}
+                    />
+                    <Text style={styles.label}>Email</Text>
+                    <TextInput
+                        
+                        placeholder="Enter Email"
+                        value={amigo.email}
+                    />
+                    <Text style={styles.label}>Bio</Text>
+                    <TextInput
+                        
+                        placeholder="Enter Bio"
+                        value={amigo.info}
+                    />
+                </View>
+                <View style={styles.socialIcons}>
+                    <SocialIcon
+                        type='instagram'
+                        iconType='font-awesome'
+                    />
+                    <SocialIcon
+                        type='facebook'
+                        iconType='font-awesome'
+                    />
+                    <SocialIcon
+                        type='whatsapp'
+                        iconType='font-awesome'
+                        onPress={() => Linking.openURL(`https://wa.me/${amigo.whatsapp}`)}
+                    />
+                </View>
+    
             </View>
-            <View style={styles.form}>
-                <Text style={styles.label}>Name</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Nome"
-                    value={amigo.nome}
-                />
-                <Text style={styles.label}>Email</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Enter Email"
-                    value={amigo.email}
-                />
-                <Text style={styles.label}>Bio</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Enter Bio"
-                    value={amigo.info}
-                />
-            </View>
-            <View style={styles.socialIcons}>
-                <SocialIcon
-                    type='instagram'
-                    iconType='font-awesome'
-                />
-                <SocialIcon
-                    type='facebook'
-                    iconType='font-awesome'
-                />
-                <SocialIcon
-                    type='whatsapp'
-                    iconType='font-awesome'
-                    onPress={() => Linking.openURL(`https://wa.me/${amigo.whatsapp}`)}
-                />
-            </View>
-
-        </View>
-    )
-}
+        )
+    }
 
 const styles = StyleSheet.create({
     container: {
