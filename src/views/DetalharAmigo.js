@@ -7,7 +7,7 @@ export default props => {
     const [amigo, setAmigo] = useState({})
     const { id } = props.route.params
 
-    fetch(`https://josmauricio.pythonanywhere.com/api/amigos/${id}`)
+    fetch(`https://vitorsantana.pythonanywhere.com/api/amigos/${id}`)
         .then(data => data.json())
         .then(json => setAmigo(json))
         .catch(error => console.warn(error))
