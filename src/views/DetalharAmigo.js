@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, Image, TextInput, StyleSheet, Linking } from 'react-native';
-import { SocialIcon } from '@rneui/themed';
-
+import { SocialIcon } from '@rneui/themed'; 
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import Icon from 'react-native-vector-icons/FontAwesome';
 export default props => {
-
+    
     const [amigo, setAmigo] = useState({})
     const { id } = props.route.params
 
@@ -11,11 +12,11 @@ export default props => {
         .then(data => data.json())
         .then(json => setAmigo(json))
         .catch(error => console.warn(error))
-
+        
         return (
             <View style={styles.container}>
                 <View style={styles.avatarContainer}>
-                    <Image
+                    <Image 
                         style={styles.avatar}
                         source={{ uri: amigo.avatar }}
                     />
@@ -41,6 +42,7 @@ export default props => {
                     />
                 </View>
                 <View style={styles.socialIcons}>
+                    
                     <SocialIcon
                         type='instagram'
                         iconType='font-awesome'
